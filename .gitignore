@@ -29,10 +29,6 @@ env/
 # Redundant archives (source is in oil_webappd/)
 oil_webappd.zip
 
-# Keras models (too large for GitHub - 100MB limit)
-*.keras
-backend/*.keras
-
 # Node / Next.js
 node_modules/
 .next/
