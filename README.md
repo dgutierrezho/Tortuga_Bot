@@ -1,23 +1,33 @@
-# Tortuga Bot
+# Tortuga-Bot: Autonomous Marine Monitoring & Conservation
+**SHPE REACH Ideathon | 2nd Place Award Winner**
 
-ML-powered image classification app with two models: **Oil Spill Detection** (satellite/RGB imagery) and **Turtle Classification** (marine life). Built with Next.js, React, and FastAPI.
+## Project Overview
+Marine conservation and disaster response currently face significant hurdles due to high operational costs and human-intensive monitoring. Tortuga-Bot is an autonomous marine vehicle system designed to bridge this gap. By utilizing a dual-model Machine Learning pipeline, the system provides real-time detection of oil spills and biological targets (sea turtles). The project integrates a bio-mimetic 3D-printed chassis with a modern full-stack dashboard to facilitate "human-less" marine research and environmental protection.
 
-## Features
+![IMG_8470](https://github.com/user-attachments/assets/7fb01090-b73c-4e24-8914-ca2396d484a5)
+**3D-Printed Turtle Chassis**
 
-- **Oil Spill Detector** — Upload satellite or aerial images to detect oil spills using a CNN+LSTM model
-- **Turtle Classifier** — Upload images to detect turtles in marine environments
-- **Confidence scores & probabilities** — See predictions with class probabilities and inference time
-- **Modern UI** — Clean, responsive interface with drag-and-drop upload
+## Engineering Problem
+The project addresses two critical environmental challenges: the high latency in detecting oil spills near offshore rigs and the invasive, costly nature of manual sea turtle tagging. This fits the Coastal Technology track.
 
-## Tech Stack
-
+## Tools Used
 | Layer | Technology |
-|-------|------------|
+| :--- | :--- |
+| **Machine Learning** | TensorFlow, Keras, OpenCV, CNN+LSTM Architectures |
+| **Backend** | FastAPI, Python 3.10+, Uvicorn |
 | **Frontend** | Next.js 16, React 19, TypeScript, Tailwind CSS |
-| **Backend** | FastAPI, Python 3.10+ |
-| **ML** | TensorFlow/Keras, OpenCV |
+| **Hardware** | CAD Design, Rapid Prototyping (3D Printing) |
 
-## Architecture
+## Technical Implementation
+The system utilizes a decoupled architecture to ensure low-latency inference and a responsive user experience.
+
+* **ML Pipeline (TensorFlow/Keras/OpenCV):**
+    * **Oil Spill Detector:** Implemented a hybrid **CNN+LSTM** architecture to extract spatial and sequential features from satellite and RGB imagery.
+    * **Turtle Classifier:** Utilized a Convolutional Neural Network (CNN) for high-accuracy biological identification.
+* **Backend (FastAPI/Python 3.10+):** Built an asynchronous server to load Keras models, run inference, and return JSON predictions including confidence scores and inference time ($ms$).
+* **Frontend (Next.js 16/React 19/TypeScript):** Developed a clean, responsive UI with Tailwind CSS that features drag-and-drop image uploads and real-time probability rendering.
+* **Hardware & Rapid Prototyping:** Designed a turtle-shaped bio-mimetic chassis to reduce hydrodynamic drag and facilitate camouflage. The model was realized through **3D Printing (PLA)**.
+
 
 ```
 ┌─────────────┐     ┌──────────────────┐     ┌─────────────────┐
@@ -26,101 +36,22 @@ ML-powered image classification app with two models: **Oil Spill Detection** (sa
 └─────────────┘     │  (proxy)         │     │  Models        │
                     └──────────────────┘     └─────────────────┘
 ```
+**System Architecture Diagram**
 
-- **Frontend**: Next.js serves the React app and proxies API requests to avoid CORS
-- **Backend**: FastAPI loads Keras models, runs inference, and returns JSON predictions
+## Results
 
-## Quick Start
+### 1. Open the app: [http://localhost:3000](http://localhost:3000) 
+* use the **Oil Spill** or **Turtle** tab to upload an image.
 
-### Prerequisites
+###  2. High-Performance Inference
+The system demonstrated the ability to process complex satellite imagery and return classification labels with **sub-100ms inference times**, validating the feasibility of real-time deployment on autonomous hardware.
 
-- Python 3.10+ with pip
-- Node.js 18+ with npm
-
-### 1. Clone the repo
-
-```bash
-git clone https://github.com/aaamarque/Tortuga_Bot.git
-cd Tortuga_Bot
-```
-
-### 2. Start the backend
-
-```bash
-cd backend
-pip install -r requirements.txt
-uvicorn server:app --reload --port 8000
-```
-
-### 3. Start the frontend
-
-In a **new terminal**:
-
-```bash
-cd oil_webappd
-npm install
-npm run dev
-```
-
-### 4. Open the app
-
-Go to [http://localhost:3000](http://localhost:3000) and use the **Oil Spill** or **Turtle** tab to upload an image.
-
-## Project Structure
-
-```
-├── backend/
-│   ├── server.py          # FastAPI app with /predict and /predict-turtle
-│   ├── requirements.txt
-│   ├── oil_spill_model.keras
-│   └── tortuga.keras
-├── oil_webappd/           # Next.js frontend
-│   ├── app/
-│   │   ├── page.tsx       # Oil Spill Detector
-│   │   ├── turtle/        # Turtle Classifier
-│   │   └── api/           # Proxy routes (predict, predict-turtle)
-│   └── components/
-└── RUN.md                 # Detailed run instructions
-```
-
-## Model Files
-
-Place the models in the `backend/` folder:
-
-- `oil_spill_model.keras` — Oil spill detection
-- `tortuga.keras` — Turtle classification
-If you have them elsewhere:
-
-```bash
-cp /path/to/oil_spill_model.keras backend/oil_spill_model.keras
-cp /path/to/tortuga.keras backend/tortuga.keras
-```
-
-## API Reference
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/health` | GET | Health check |
-| `/predict` | POST | Oil spill detection (multipart/form-data, field: `file`) |
-| `/predict-turtle` | POST | Turtle classification (multipart/form-data, field: `file`) |
-
-**Response format:**
-
-```json
-{
-  "label": "turtle" | "no_turtle",
-  "confidence": 0.95,
-  "probs": { "turtle": 0.95, "no_turtle": 0.05 },
-  "inference_ms": 42
-}
-```
-
-## Environment Variables
-
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `BACKEND_URL` | `http://127.0.0.1:8000/predict` | FastAPI base URL (proxy target) |
-
-Copy `oil_webappd/.env.local.example` to `oil_webappd/.env.local` to customize.
+###  3. Autonomous Research Prototype
+The project successfully modeled the concept of "Human-less Tagging." By integrating the turtle detection model with a theoretical electromechanical arm, the bot can automate the deployment of PIT tags, significantly reducing the cost and impact of marine research.
 
 
+## The Team: 
+* **Daniela Gutierrez Hornedo** 
+* **Evelyn M. Mares Moreno** 
+* **Marlyn Arque Rupa** 
+* **Anthony Flores-Mendez** 
