@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+.env
+*.egg-info/
+.eggs/
+
+# Environment & secrets
+.env
+.env.local
+.env*.local
+
+# IDE & OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Redundant archives (source is in oil_webappd/)
+oil_webappd.zip
+
+# Keras models (too large for GitHub - 100MB limit)
+*.keras
+backend/*.keras
+
+# Node / Next.js
+node_modules/
+.next/
+
+# Large datasets
+*.zip
+dataset.zip
+/final dataset used for oil spill/
+OilSpill_00841 copy.jpg
+OilSpill_00846 copy.jpg
+ocean.jpg
+oil_Satellite_Image.jpg
+oil_ocean.jpg
+tortuga.jpg
