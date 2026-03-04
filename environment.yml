@@ -1,0 +1,17 @@
+name: oil_spill_classification
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy<2.0
+  - pip
+  - pip:
+      - tensorflow>=2.13.0
+      - protobuf>=3.20.3,<5.0
+      - opencv-python
+      - matplotlib
+      - pillow
+      - jupyter
+      - notebook
+      - ipykernel
