@@ -2,10 +2,13 @@
 **SHPE REACH Ideathon | 2nd Place Award Winners**
 
 ## Project Overview
-Marine conservation and disaster response currently face significant hurdles due to high operational costs and human-intensive monitoring. Tortuga-Bot is an autonomous marine vehicle system designed to bridge this gap. By utilizing a dual-model Machine Learning pipeline, the system provides real-time detection of oil spills and biological targets (sea turtles). The project integrates a bio-mimetic 3D-printed chassis with a modern full-stack dashboard to facilitate "human-less" marine research and environmental protection.
+Marine conservation and disaster response currently face significant hurdles due to high operational costs and human-intensive monitoring. Tortuga-Bot is an autonomous marine vehicle system designed to bridge this gap. By utilizing a dual-model Machine Learning pipeline, the system provides real-time detection of oil spills and biological targets (sea turtles). The project integrates a bio-mimetic 3D-printed chassis with a modern full-stack dashboard to facilitate marine research and environmental protection.
 
-![IMG_8470](https://github.com/user-attachments/assets/7fb01090-b73c-4e24-8914-ca2396d484a5)
-**3D-Printed Turtle Chassis**
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7fb01090-b73c-4e24-8914-ca2396d484a5" width="400">
+</p>
+
+
 
 ## Engineering Problem
 The project addresses two critical environmental challenges: the high latency in detecting oil spills near offshore rigs and the invasive, costly nature of manual sea turtle tagging. This fits the Coastal Technology track.
@@ -42,6 +45,11 @@ The system utilizes a decoupled architecture to ensure low-latency inference and
 
 ### 1. Open the app: https://tortuga-bot-prj7n.ondigitalocean.app/
 * use the **Oil Spill** or **Turtle** tab to upload an image.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f59b0ee0-3535-4a95-b7aa-09cf160e9321" width="600">
+</p>
+
 
 ###  2. High-Performance Inference
 The system demonstrated the ability to process complex satellite imagery and return classification labels with **sub-100ms inference times**, validating the feasibility of real-time deployment on autonomous hardware.
