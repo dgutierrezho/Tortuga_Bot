@@ -7,7 +7,9 @@ Marine conservation and disaster response currently face significant hurdles due
 <p align="center">
   <img src="https://github.com/user-attachments/assets/7fb01090-b73c-4e24-8914-ca2396d484a5" width="400">
 </p>
-
+<p align="center">
+  3D Printed Chassis Model
+</p>
 
 
 ## Engineering Problem
@@ -39,7 +41,9 @@ The system utilizes a decoupled architecture to ensure low-latency inference and
 └─────────────┘     │  (proxy)         │     │  Models        │
                     └──────────────────┘     └─────────────────┘
 ```
-**System Architecture Diagram**
+<p align="center">
+  System Architecture Diagram
+</p>
 
 ## Results
 
@@ -49,7 +53,9 @@ The system utilizes a decoupled architecture to ensure low-latency inference and
 <p align="center">
   <img src="https://github.com/user-attachments/assets/f59b0ee0-3535-4a95-b7aa-09cf160e9321" width="600">
 </p>
-
+<p align="center">
+  User Interface
+</p>
 
 ###  2. High-Performance Inference
 The system demonstrated the ability to process complex satellite imagery and return classification labels with **sub-100ms inference times**, validating the feasibility of real-time deployment on autonomous hardware.
