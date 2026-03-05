@@ -1,5 +1,5 @@
 # Tortuga-Bot: Autonomous Marine Monitoring & Conservation
-**SHPE REACH Ideathon | 2nd Place Award Winner**
+**SHPE REACH Ideathon | 2nd Place Award Winners**
 
 ## Project Overview
 Marine conservation and disaster response currently face significant hurdles due to high operational costs and human-intensive monitoring. Tortuga-Bot is an autonomous marine vehicle system designed to bridge this gap. By utilizing a dual-model Machine Learning pipeline, the system provides real-time detection of oil spills and biological targets (sea turtles). The project integrates a bio-mimetic 3D-printed chassis with a modern full-stack dashboard to facilitate "human-less" marine research and environmental protection.
@@ -40,7 +40,7 @@ The system utilizes a decoupled architecture to ensure low-latency inference and
 
 ## Results
 
-### 1. Open the app: [http://localhost:3000](http://localhost:3000) 
+### 1. Open the app: https://tortuga-bot-prj7n.ondigitalocean.app/
 * use the **Oil Spill** or **Turtle** tab to upload an image.
 
 ###  2. High-Performance Inference
